@@ -7,6 +7,23 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
         <title>Mirage</title>
         <item>
             <title>1.1.4</title>
+            <pubDate>Tue, 29 Sep 2026 19:05:49 +0000</pubDate>
+            <link>https://github.com/laobamac/MirageWallpaper</link>
+            <sparkle:channel>beta</sparkle:channel>
+            <sparkle:version>496</sparkle:version>
+            <sparkle:shortVersionString>1.1.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.2</sparkle:minimumSystemVersion>
+            <description sparkle:format="plain-text"><![CDATA[Commit: a89e751bf497357c052f9f737aaafb7ad7b07a7b
+Channel: beta
+
+fix(playback): detect fullscreen on notched displays across apps
+
+
+]]></description>
+            <enclosure url="https://github.com/laobamac/MirageWallpaper/releases/download/prerelease/Mirage-496-a89e751bf497-macOS-x86_64.zip" length="113030612" type="application/octet-stream" sparkle:edSignature="lqIo2HNhRBcRnfhNr1Lbk0JfCDOOiY/GbCR+WG8Vgvmzm/1UkS3jOClxf2BZwj0+VcVfvFI/jkSBqhfP/OVKDg=="/>
+        </item>
+        <item>
+            <title>1.1.4</title>
             <pubDate>Tue, 29 Sep 2026 18:18:39 +0000</pubDate>
             <link>https://github.com/laobamac/MirageWallpaper</link>
             <sparkle:channel>beta</sparkle:channel>
@@ -89,23 +106,6 @@ fix(scene): correct wallpaper compositing
 
 ]]></description>
             <enclosure url="https://github.com/laobamac/MirageWallpaper/releases/download/prerelease/Mirage-481-ab0aa6c52271-macOS-x86_64.zip" length="106870019" type="application/octet-stream" sparkle:edSignature="LN9BGFanEWPiFGKGzxX3b4exRk0tVEZA15RKu7T0t0krsEP39qmXjPeQlxpo/k9fcEa4yYJ6dwjRQ81hkDmCAQ=="/>
-        </item>
-        <item>
-            <title>1.1.4</title>
-            <pubDate>Tue, 22 Sep 2026 16:59:18 +0000</pubDate>
-            <link>https://github.com/laobamac/MirageWallpaper</link>
-            <sparkle:channel>beta</sparkle:channel>
-            <sparkle:version>480</sparkle:version>
-            <sparkle:shortVersionString>1.1.4</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.2</sparkle:minimumSystemVersion>
-            <description sparkle:format="plain-text"><![CDATA[Commit: 0f539b79413f322efd97f81cda3456ac305b9d46
-Channel: beta
-
-fix(scene): keep legacy inverse-square lighting for premultiplied shaders
-
-
-]]></description>
-            <enclosure url="https://github.com/laobamac/MirageWallpaper/releases/download/prerelease/Mirage-480-0f539b79413f-macOS-x86_64.zip" length="106868061" type="application/octet-stream" sparkle:edSignature="i3Ev4cz11KAH8C9i5dKIOmzr9Qs3U4Z3z7foRraGY971eNrW/eFhG5Ecd3+AfsS5EShaJxGW/C37jZ2rzEDjCQ=="/>
         </item>
         <item>
             <title>1.1.4</title>
@@ -564,6 +564,6 @@ Builds use ad-hoc signing; macOS may require “Open Anyway” under System Sett
     </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: 2Zls9vChg/yQry+bYzqXBJEL+xGGVBH+nstJFTxgOuwmtl61tkMru/O9b29susXZjLJH6z088cu0L4ZYNwQuDw==
-length: 41941
+edSignature: 8HZKAx8nftQW4rvhuVCb+JIZjF/FGOjqRwAVixDgi4XTbgvymwaTRux+wyY/3C3/vhEnrc5M2Iky8c8YCM/fCA==
+length: 41932
 -->
