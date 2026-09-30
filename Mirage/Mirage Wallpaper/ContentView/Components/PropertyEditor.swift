@@ -12,17 +12,29 @@ import UniformTypeIdentifiers
 
 // Faithful Wallpaper Engine customization sidebar: every property type,
 // condition-driven show/hide, official localization, and real HTML labels.
-struct PropertyEditor: View {
+struct PropertyEditor<Header: View, Footer: View>: View {
     @Environment(WallpaperViewModel.self) var wallpaperViewModel
     let wallpaper: WEWallpaper
     var isActive = true
+    private let header: Header
+    private let footer: Footer
+
+    init(wallpaper: WEWallpaper, isActive: Bool = true,
+         @ViewBuilder header: () -> Header = { EmptyView() },
+         @ViewBuilder footer: () -> Footer = { EmptyView() }) {
+        self.wallpaper = wallpaper
+        self.isActive = isActive
+        self.header = header()
+        self.footer = footer()
+    }
 
     @StateObject private var conditions = ConditionStore()
 
     var body: some View {
         @Bindable var wallpaperViewModel = wallpaperViewModel
         let model = wallpaperViewModel.propertyModel
-        Group {
+        LazyVStack(alignment: .leading, spacing: 12) {
+            header.frame(maxWidth: .infinity)
             if model.rows.isEmpty {
                 HStack {
                     Text("此壁纸没有可调节的属性。")
@@ -31,15 +43,14 @@ struct PropertyEditor: View {
                     Spacer()
                 }
             } else {
-                LazyVStack(alignment: .leading, spacing: 12) {
-                    ForEach(model.rows.filter { conditions.isVisible($0.property.condition) }) { entry in
-                        PropertyRow(wallpaper: wallpaper, key: entry.id,
-                                    property: entry.property, valueState: entry.state,
-                                    displayKey: wallpaperViewModel.selectedDisplayKey, conditions: conditions)
-                            .environment(wallpaperViewModel)
-                    }
+                ForEach(model.rows.filter { conditions.isVisible($0.property.condition) }) { entry in
+                    PropertyRow(wallpaper: wallpaper, key: entry.id,
+                                property: entry.property, valueState: entry.state,
+                                displayKey: wallpaperViewModel.selectedDisplayKey, conditions: conditions)
+                        .environment(wallpaperViewModel)
                 }
             }
+            footer.frame(maxWidth: .infinity)
         }
         .background {
             PropertyConditionObserver(model: model, identity: wallpaper.id,
